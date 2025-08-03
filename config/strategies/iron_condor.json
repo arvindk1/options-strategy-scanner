@@ -1,0 +1,92 @@
+{
+  "module": "strategies.iron_condor_plugin",
+  "strategy_name": "Iron Condor",
+  "strategy_type": "IRON_CONDOR",
+  "description": "Sell an OTM call spread and an OTM put spread to profit from time decay in range-bound markets.",
+  
+  "universe": {
+    "symbol_types": ["ETF", "INDEX"],
+    "min_market_cap": 10000000000,
+    "min_avg_volume": 3000000,
+    "min_option_volume": 2000,
+    "exclude_earnings": true
+  },
+
+  "position_parameters": {
+    "entry_day": 3,
+    "entry_time": "11:30",
+    "target_dte_range": [20, 30],
+    "min_credit_to_width_ratio": 0.20,
+    "max_risk_per_trade": 1000,
+    "max_opportunities": 3
+  },
+
+  "strike_selection": {
+    "call_delta": 0.15,
+    "put_delta": -0.15,
+    "spread_width": 5,
+    "min_credit": 0.80
+  },
+
+  "entry_signals": {
+    "allowed_bias": ["NEUTRAL"],
+    "max_volatility": 0.35,
+    "min_liquidity_score": 0.7
+  },
+
+  "exit_rules": {
+    "profit_targets": [
+      {
+        "level": 0.50,
+        "action": "CLOSE_ALL",
+        "priority": 90,
+        "description": "Close at 50% max profit"
+      }
+    ],
+    "stop_loss_rules": [
+      {
+        "type": "PERCENTAGE",
+        "trigger": -1.00,
+        "action": "CLOSE_ALL",
+        "priority": 100,
+        "description": "Close at 100% loss"
+      }
+    ],
+    "time_exits": [
+      {
+        "condition": "dte_less_than",
+        "value": 2,
+        "action": "CLOSE_ALL",
+        "priority": 85,
+        "description": "Close 2 days before expiration"
+      }
+    ]
+  },
+
+  "scoring": {
+    "credit_to_width_weight": 0.5,
+    "liquidity_weight": 0.3,
+    "volatility_weight": 0.2,
+    "score_ceiling": 10.0,
+    "score_floor": 1.0,
+    "round_decimals": 1
+  },
+
+  "risk_management": {
+    "max_allocation_percentage": 20,
+    "max_single_position_size": 1000,
+    "correlation_limit": 0.6,
+    "sector_concentration_limit": 0.3
+  },
+
+  "educational_content": {
+    "best_for": "Neutral market outlook with low to moderate volatility",
+    "when_to_use": "Sideways markets with compressed range expectations",
+    "profit_mechanism": "Collect premium by selling time value on both sides",
+    "risk_level": "MEDIUM",
+    "typical_duration": "20–30 days",
+    "max_profit": "Net credit received (if both spreads expire worthless)",
+    "max_loss": "Spread width minus net credit",
+    "breakevens": ["Put strike – credit", "Call strike + credit"]
+  }
+}

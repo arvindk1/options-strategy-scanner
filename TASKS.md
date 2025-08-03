@@ -90,7 +90,7 @@ This document outlines the entire architecture, plan, and components needed to b
 
 ### 9. 📉 Top 40 Ticker Maintenance
 
-* Hardcoded list in config or Firestore
+* Hardcoded list in `config/top_tickers.json` or Firestore
 * Scheduled script (Cloud Scheduler) to refresh top tickers weekly
 * UI override toggle for advanced users
 
