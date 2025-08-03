@@ -1,0 +1,10 @@
+{
+  "id": "basic_straddle",
+  "name": "Basic Straddle",
+  "description": "Buy a call and put at the same strike to profit from high volatility.",
+  "risk_level": "Medium",
+  "params": {
+    "dte": 30,
+    "delta": 0.2
+  }
+}
