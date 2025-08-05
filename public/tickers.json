@@ -1,0 +1,52 @@
+[
+  {
+    "symbol": "SPY",
+    "name": "SPDR S&P 500 ETF Trust",
+    "category": "Broad Market"
+  },
+  {
+    "symbol": "QQQ",
+    "name": "Invesco QQQ Trust (Nasdaq-100)",
+    "category": "Broad Market"
+  },
+  {
+    "symbol": "IWM",
+    "name": "iShares Russell 2000 ETF",
+    "category": "Broad Market"
+  },
+  {
+    "symbol": "DIA",
+    "name": "SPDR Dow Jones Industrial Average ETF",
+    "category": "Broad Market"
+  },
+  {
+    "symbol": "XLK",
+    "name": "Technology Select Sector SPDR Fund",
+    "category": "Sector"
+  },
+  {
+    "symbol": "XLF",
+    "name": "Financial Select Sector SPDR Fund",
+    "category": "Sector"
+  },
+  {
+    "symbol": "GLD",
+    "name": "SPDR Gold Shares",
+    "category": "Commodity"
+  },
+  {
+    "symbol": "TLT",
+    "name": "iShares 20+ Year Treasury Bond ETF",
+    "category": "Bond"
+  },
+  {
+    "symbol": "USO",
+    "name": "United States Oil Fund",
+    "category": "Commodity"
+  },
+  {
+    "symbol": "VIX",
+    "name": "VIX ETF (for volatility plays)",
+    "category": "Volatility"
+  }
+]

@@ -1,0 +1,11 @@
+# ETFs - Exchange Traded Funds with High Options Liquidity
+SPY   # SPDR S&P 500 ETF Trust
+QQQ   # Invesco QQQ Trust
+IWM   # iShares Russell 2000 ETF
+DIA   # SPDR Dow Jones Industrial Average ETF
+
+# Sector ETFs
+XLK XLF XLE XLV XLI XLY XLP XLU XLB XLRE
+
+# Commodity & Bond ETFs
+GLD TLT USO VIX
